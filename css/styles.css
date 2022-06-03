@@ -204,13 +204,13 @@ body {
   letter-spacing: 0.02em;
 }
 
-.contacts-item:not(:last-child) {
-  margin-right: 50px;
-}
-
 .contacts-item {
   display: flex;
   align-items: center;
+}
+
+.contacts-item:not(:last-child) {
+  margin-right: 50px;
 }
 
 .contacts-link {
@@ -226,7 +226,13 @@ body {
   color: var(--accent-color);
 }
 
+.contacts-link:hover + .contacts-icon,
+.contacts-link:focus + .contacts-icon {
+  color: var(--accent-color);
+}
+
 .contacts-icon {
+  order: -1;
   fill: currentColor;
   margin-right: 10px;
 }
@@ -237,7 +243,7 @@ body {
   text-align: center;
 }
 
-.overlay {
+.hero-overlay {
   margin-right: auto;
   margin-left: auto;
   padding-top: 200px;
@@ -276,6 +282,19 @@ body {
 }
 
 /* -----Advantages----- */
+
+.advantages-list {
+  display: flex;
+}
+
+.advantages-items {
+  max-width: calc((100% - 3 * var(--card-gap-size)) / 4);
+}
+
+.advantages-items:not(:last-child) {
+  margin-right: var(--card-gap-size);
+}
+
 .advantages-wrap {
   padding: 25px 100px;
   margin-bottom: 30px;
@@ -283,6 +302,7 @@ body {
   height: 120px;
   background-color: var(--third-bg-color);
 }
+
 .advantages-icon {
   width: 70px;
   height: 70px;
@@ -297,18 +317,6 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--second-title-color);
-}
-
-.advantages-list {
-  display: flex;
-}
-
-.advantages-items {
-  max-width: calc((100% - 3 * var(--card-gap-size)) / 4);
-}
-
-.advantages-items:not(:last-child) {
-  margin-right: var(--card-gap-size);
 }
 
 .advantages-text {
@@ -360,6 +368,14 @@ body {
   margin-right: var(--card-gap-size);
 }
 
+.team-wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  background-color: var(--first-bg-color);
+  border-radius: 0px 0px 4px 4px;
+}
+
 .team-item-title {
   margin-bottom: 10px;
 
@@ -372,17 +388,14 @@ body {
   margin-bottom: 16px;
 }
 
-.team-wrapper {
-  padding-top: 30px;
-  padding-bottom: 30px;
-
-  background-color: var(--first-bg-color);
+.team-socials-list {
+  display: flex;
+  justify-content: center;
 }
 
-.team-socials-list {
-  margin-left: 32px;
-  margin-right: 32px;
-  display: flex;
+.team-socials-item {
+  height: 44px;
+  width: 44px;
 }
 
 .team-socials-item:not(:last-child) {
@@ -390,15 +403,15 @@ body {
 }
 
 .team-socials-link {
-  padding: 12px;
-  display: block;
-
-  height: 44px;
-  width: 44px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   color: var(--first-icon-color);
   background-color: transparent;
+  border-radius: 50%;
 }
 
 .team-socials-link:hover,
@@ -414,19 +427,24 @@ body {
 /* -----Clients----- */
 .clients-list {
   display: flex;
-  margin: -15px;
 }
 
 .clients-item {
-  margin: 15px;
+  height: 92px;
+  width: 170px;
+}
+
+.clients-item:not(:last-child) {
+  margin-right: var(--card-gap-size);
 }
 
 .clients-link {
-  padding: 16px 32px;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  height: 92px;
-  width: 170px;
+  width: 100%;
+  height: 100%;
 
   border: 1px solid var(--first-icon-color);
   border-radius: 4px;
@@ -440,9 +458,6 @@ body {
 }
 
 .clients-icon {
-  width: 106px;
-  height: 60px;
-
   fill: currentColor;
 }
 
@@ -452,6 +467,14 @@ body {
   padding-bottom: var(--footer-padding-size);
 
   background-color: var(--fourth-bg-color);
+}
+
+.footer > .container {
+  display: flex;
+}
+
+.adress-wrapper {
+  margin-right: 70px;
 }
 
 .footer .logo {
@@ -465,7 +488,7 @@ body {
 
 .adress-item {
   font-size: 14px;
-  line-height: 1.71x;
+  line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--first-title-color);
 }
@@ -479,25 +502,20 @@ body {
   font-style: normal;
 }
 
-.adress-wrapper {
-  margin-right: 70px;
-}
-
-.adress {
-  color: var(--third-text-color);
-}
-
 .adress-link:hover,
 .adress-link:focus {
   color: var(--accent-color);
 }
 
-.footer > .container {
-  display: flex;
+.adress-color {
+  color: var(--third-text-color);
+}
+
+.socials-wrapper {
+  margin-top: 12px;
 }
 
 .socials-title {
-  margin-top: 12px;
   margin-bottom: 20px;
 
   text-transform: uppercase;
@@ -511,16 +529,23 @@ body {
   display: flex;
 }
 
+.socials-item {
+  width: 44px;
+  height: 44px;
+}
+
 .socials-item:not(:last-child) {
   margin-right: 10px;
 }
 
 .socials-link {
-  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  display: block;
-  width: 44px;
-  height: 44px;
+  width: 100%;
+  height: 100%;
+
   border-radius: 50%;
   background-color: var(--third-icon-color);
   color: var(--second-icon-color);
@@ -537,10 +562,6 @@ body {
 
 /* ---------------------Main part of portfolio page----------------------- */
 /* -----Buttons line----- */
-/* .work-list-wrap {
-  margin-bottom: 34px;
-} */
-
 .works-list {
   display: flex;
   justify-content: center;
@@ -585,9 +606,27 @@ body {
 }
 
 /* works examples sheet */
+.examples-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--card-gap-size) / -2);
+}
+
+.examples-item {
+  flex-basis: calc((100% - (3 * var(--card-gap-size))) / 3);
+  margin: calc(var(--card-gap-size) / 2);
+}
+
 .examples-card:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.examples-item-wrapper {
+  padding: 20px 24px 20px 24px;
+  border-bottom: 1px solid var(--cards-border-color);
+  border-left: 1px solid var(--cards-border-color);
+  border-right: 1px solid var(--cards-border-color);
 }
 
 .examples-title {
@@ -598,27 +637,6 @@ body {
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--second-title-color);
-}
-
-.examples-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: calc(var(--card-gap-size) / -2);
-}
-
-.examples-item-wrapper {
-  padding: 20px 24px 20px 24px;
-  border-bottom: 1px solid var(--cards-border-color);
-  border-left: 1px solid var(--cards-border-color);
-  border-right: 1px solid var(--cards-border-color);
-}
-
-.examples-item {
-  flex-basis: calc((100% - (3 * var(--card-gap-size))) / 3);
-}
-
-.examples-item {
-  margin: calc(var(--card-gap-size) / 2);
 }
 
 .examples-text {
